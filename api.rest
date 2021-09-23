@@ -2,15 +2,15 @@ POST http://localhost:5500/api/send-otp HTTP/1.1
 Content-Type: application/json
 
 {
-    "phone":"+918980402166"
+    "phone":"+918980406166"
 }
 ###
 POST http://localhost:5500/api/verify-otp HTTP/1.1
 Content-Type: application/json
 
+
 {
-    "phone":"+918980402166",
-    "otp":6937,
-    "hash":"9f02cf54303fbc0eb2a4000c2345ae925cfbeae525b07e5757e36546b8effacf.1631791717747"
-    
+  "hash": "31e96c0a9d3301341500338e8d32edc7351340cd6ed431983743cf93d8b36b10.1632378555663",
+  "phone": "+918980406166",
+  "otp": 6838
 }

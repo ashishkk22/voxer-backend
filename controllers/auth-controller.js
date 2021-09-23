@@ -1,8 +1,8 @@
-const otpService = require('../services/otp-service');
-const hashService = require('../services/hash-service');
-const userService = require('../services/user-service');
-const tokenService = require('../services/token-service');
-const UserDto = require('../dtos/user-dto');
+const otpService = require("../services/otp-service")
+const hashService = require("../services/hash-service")
+const userService = require("../services/user-service")
+const tokenService = require("../services/token-service")
+const UserDto = require("../dtos/user-dto")
 
 class AuthController {
   async sendOtp(req, res) {
@@ -129,15 +129,15 @@ class AuthController {
     const userDto = new UserDto(user)
     res.json({ user: userDto, auth: true })
   }
-  async logout(req,res){
-    const {refreshToken}=req.cookies;
+  async logout(req, res) {
+    const { refreshToken } = req.cookies
     //delete refresh token from db
-    await tokenService.removeToken(refreshToken);
-    //delete cookie 
-    res.clearCookie('refreshToken');
-    res.clearCookie('accessToken');
-    res.json({user:null,auth:false});
+    await tokenService.removeToken(refreshToken)
+    //delete cookie
+    res.clearCookie("refreshToken")
+    res.clearCookie("accessToken")
+    res.json({ user: null, auth: false })
   }
 }
 
-module.exports = new AuthController();
+module.exports = new AuthController()
